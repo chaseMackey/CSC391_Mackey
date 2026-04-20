@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project 2 - Generative Art</title>
-    <!-- p5.js Library -->
-    <script src="https://cloudflare.com"></script>
+    <title>Project 2 - p5.js Test</title>
+    <!-- Using a different, very stable library link -->
+    <script src="https://jsdelivr.net"></script>
     <style>
-      body { margin: 0; padding: 0; overflow: hidden; background-color: #111; }
+      body { margin: 0; background: #111; overflow: hidden; }
     </style>
   </head>
   <body>
     <script>
+      let x = 0;
+
       function setup() {
+        // This creates the drawing area
         createCanvas(windowWidth, windowHeight);
-        background(15);
+        background(20);
       }
 
       function draw() {
-        // Creates a "fade" effect by drawing a semi-transparent background
-        background(15, 10); 
+        // Draw a dark background every frame to clear the screen
+        background(20, 20); 
 
-        // Change colors based on mouse position
-        let r = map(mouseX, 0, width, 100, 255);
-        let g = map(mouseY, 0, height, 100, 255);
-        let b = 200;
+        // 1. Draw a white circle that follows your mouse
+        fill(255);
+        noStroke();
+        circle(mouseX, mouseY, 50);
 
-        stroke(r, g, b, 150);
-        strokeWeight(2);
+        // 2. Draw a red ball that moves automatically across the screen
+        fill(255, 0, 0);
+        circle(x, height / 2, 100);
         
-        // This creates "mirrored" lines from the corners to your mouse
-        line(0, 0, mouseX, mouseY);
-        line(width, 0, mouseX, mouseY);
-        line(0, height, mouseX, mouseY);
-        line(width, height, mouseX, mouseY);
+        // Move the red ball
+        x = x + 5;
+        if (x > width) { x = 0; }
       }
 
       function windowResized() {

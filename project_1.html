@@ -2,41 +2,23 @@
 <html>
   <head>
     <title>Project 1 - Orbiting Spheres</title>
-    <!-- Importing the A-Frame Library -->
+    <!-- Use the specific link to the library below -->
     <script src="https://aframe.io"></script>
   </head>
   <body>
     <a-scene>
-      <!-- Background / Sky -->
       <a-sky color="#050505"></a-sky>
 
-      <!-- Center Sphere (The Red "Sun") -->
-      <a-sphere 
-        id="red-sphere" 
-        position="0 1.25 -5" 
-        radius="1.5" 
-        color="#EF2D5E">
-      </a-sphere>
+      <!-- Center Sphere -->
+      <a-sphere position="0 1.25 -5" radius="1.5" color="#EF2D5E"></a-sphere>
 
+      <!-- Orbiting Sphere with Animation -->
       
-      
-        
-        <!-- Orbiting Sphere (The Blue "Planet") -->
-        <!-- Positioned 4 units away from the center -->
-        <a-sphere 
-          id="blue-sphere" 
-          position="4 0 0" 
-          radius="0.5" 
-          color="#4CC3D9">
-        </a-sphere>
-        
+        <a-sphere position="4 0 0" radius="0.5" color="#4CC3D9"></a-sphere>
       
 
-      <!-- Basic Lighting -->
       <a-light type="ambient" color="#444"></a-light>
       <a-light type="point" intensity="1" position="2 4 4"></a-light>
-
     </a-scene>
   </body>
 </html>
-

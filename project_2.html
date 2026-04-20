@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project 2 - Generative Art</title>
+    <!-- p5.js Library -->
+    <script src="https://cloudflare.com"></script>
+    <style>
+      body { margin: 0; padding: 0; overflow: hidden; background-color: #111; }
+    </style>
+  </head>
+  <body>
+    <script>
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+        background(15);
+      }
 
+      function draw() {
+        // Creates a "fade" effect by drawing a semi-transparent background
+        background(15, 10); 
+
+        // Change colors based on mouse position
+        let r = map(mouseX, 0, width, 100, 255);
+        let g = map(mouseY, 0, height, 100, 255);
+        let b = 200;
+
+        stroke(r, g, b, 150);
+        strokeWeight(2);
+        
+        // This creates "mirrored" lines from the corners to your mouse
+        line(0, 0, mouseX, mouseY);
+        line(width, 0, mouseX, mouseY);
+        line(0, height, mouseX, mouseY);
+        line(width, height, mouseX, mouseY);
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+    </script>
+  </body>
+</html>

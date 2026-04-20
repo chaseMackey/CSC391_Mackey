@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>A-Frame Debug</title>
+    <title>Project 1 - Fixed View</title>
     <script src="https://aframe.io"></script>
   </head>
   <body>
     <a-scene>
-      <!-- Basic shapes at safe positions -->
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
+      <!-- Background -->
       <a-sky color="#222"></a-sky>
 
-      <!-- Explicit Camera so you don't start inside an object -->
+      <!-- Center Sphere (Red) -->
+      <a-sphere position="0 1.25 -5" radius="1.5" color="red"></a-sphere>
+
+      <!-- Orbiting Sphere (Blue) -->
       
+        <a-sphere position="4 0 0" radius="0.5" color="blue"></a-sphere>
+      
+
+      <!-- FORCE THE CAMERA POSITION -->
+      <!-- This places you 10 units back so you can't miss the objects -->
+      
+      
+      <!-- Added light so objects aren't black -->
+      <a-light type="directional" position="1 1 1"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
     </a-scene>
   </body>
 </html>
